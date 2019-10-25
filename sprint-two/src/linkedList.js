@@ -17,7 +17,7 @@ var LinkedList = function() {
       // set new node to tail
       list.tail = newNode;
     }
-
+    //Time complexity: O(1)
   };
 
   list.removeHead = function() {
@@ -35,6 +35,7 @@ var LinkedList = function() {
     }
     // return tbd node
     return toBeRemoved;
+    //Time complexity: O(1)
   };
 
   list.contains = function(target, inputNode) {
@@ -54,6 +55,7 @@ var LinkedList = function() {
     }
   };
   return list;
+  //Time complexity: O(n)
 };
 
 var Node = function(value) {
@@ -67,12 +69,8 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+add to tail is constant
+remove head is constant
+contains is linear
  */
-
-// var newLinkedList = LinkedList();
-// console.log(newLinkedList.addToTail('88'));
-var firstLinkedList = LinkedList();
-console.log(firstLinkedList);
-var testNode = Node('test val');
-console.log(testNode);
 
