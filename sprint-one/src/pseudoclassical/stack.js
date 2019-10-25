@@ -28,6 +28,7 @@ Stack.prototype.size = function() {
 
 
 stack = new Stack;
+console.log(stack);
 stack.push('a');
 console.log(stack.storage);
 console.log(stack.sizeVal);
