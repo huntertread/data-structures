@@ -27,22 +27,22 @@ Stack.prototype.size = function() {
 };
 
 
-stack = new Stack;
-console.log(stack);
-stack.push('a');
-console.log(stack.storage);
-console.log(stack.sizeVal);
-console.log(stack.pop());
-stack.pop();
-console.log(stack.storage);
-stack.push('b');
-stack.push('c');
-console.log(stack.storage);
-stack.push('d');
-console.log(stack.storage);
-console.log(stack.pop());
-stack.pop();
-console.log(stack.storage);
-console.log(stack);
+// stack = new Stack;
+// console.log(stack);
+// stack.push('a');
+// console.log(stack.storage);
+// console.log(stack.sizeVal);
+// console.log(stack.pop());
+// stack.pop();
+// console.log(stack.storage);
+// stack.push('b');
+// stack.push('c');
+// console.log(stack.storage);
+// stack.push('d');
+// console.log(stack.storage);
+// console.log(stack.pop());
+// stack.pop();
+// console.log(stack.storage);
+// console.log(stack);
 
 
