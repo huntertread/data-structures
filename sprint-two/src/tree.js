@@ -2,7 +2,7 @@ var Tree = function(value) {
   var newTree = {};
   newTree.value = value;
   extend(newTree, treeMethods);
-  newTree.children = [];  // fix me <- we fixed? changed null to []
+  newTree.children = []; // fix me <- we fixed? changed null to []
   return newTree;
 };
 
@@ -12,19 +12,20 @@ var treeMethods = {
     var child = Tree(value);
     this.children.push(child);
     return child;
+    //constant: O(1)
   },
 
   contains: function(target, currentNode) {
     // currentNode = root node || current node
     var currentNode = currentNode || this;
     // if current node contains target value
-    if(currentNode.value === target) {
+    if (currentNode.value === target) {
       // return true
       return true;
     // if current node has children
     } else if (currentNode.children.length > 0) {
       // iterate over the children
-      for(var i = 0; i < currentNode.children.length; i++) {
+      for (var i = 0; i < currentNode.children.length; i++) {
         // recurse over each child
         // if any of the recursive calls return true
         if (currentNode.contains(target, currentNode.children[i])) {
@@ -35,6 +36,7 @@ var treeMethods = {
     }
     return false;
   }
+  //linear: O(n)
 };
 
 /* --- extend function --- */
