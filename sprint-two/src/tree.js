@@ -17,30 +17,23 @@ var treeMethods = {
   contains: function(target, currentNode) {
     // currentNode = root node || current node
     var currentNode = currentNode || this;
-    var containsValue = false;
-    // if currentNode contains target
-    if (currentNode.value === target) {
+    // if current node contains target value
+    if(currentNode.value === target) {
       // return true
-      containsValue = true;
-    // else if currentNode.children
-    } else if (currentNode.value !== target && currentNode.children.length) {
-      for (var i = 0; i < currentNode.children.length; i++) {
-        return currentNode.children[i].contains(target, currentNode.children[i]);
+      return true;
+    // if current node has children
+    } else if (currentNode.children.length > 0) {
+      // iterate over the children
+      for(var i = 0; i < currentNode.children.length; i++) {
+        // recurse over each child
+        // if any of the recursive calls return true
+        if (currentNode.contains(target, currentNode.children[i])) {
+          // return true
+          return true;
+        }
       }
-      // // iterate over the children array
-      // currentNode.children.forEach(function(element) {
-      //   // recurse contains fn on each index
-      //   if (element.contains(target, element)) {
-      //     return true;
-      //   } else {
-      //     element.contains(target, element);
-      //   }
-      // });
-    // if value is never found
-    } else {
-      // return false
-      return containsValue;
     }
+    return false;
   }
 };
 
@@ -59,10 +52,10 @@ var extend = function (destination, source) {
 
 /* --- tests ---*/
 
-var tree1 = Tree(1); // original tree
-console.log(tree1);
-tree1.addChild(2); // original tree's child
-console.log(tree1.children);
-tree1.children[0].addChild(3); // childs child
-console.log(tree1.children[0]);
-console.log(tree1.contains(2));
+// var tree1 = Tree(1); // original tree
+// console.log(tree1);
+// tree1.addChild(2); // original tree's child
+// console.log(tree1.children);
+// tree1.children[0].addChild(3); // childs child
+// console.log(tree1.children[0]);
+// console.log(tree1.contains(2));
