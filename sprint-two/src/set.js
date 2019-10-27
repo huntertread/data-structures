@@ -12,6 +12,7 @@ var setPrototype = {
       // add item to storage
       this._storage.push(item);
     }
+    // linear O(n)
   },
 
   contains: function(item) {
@@ -24,6 +25,7 @@ var setPrototype = {
       // return false
       return false;
     }
+    // linear O(n)
   },
 
   remove: function(item) {
@@ -31,8 +33,8 @@ var setPrototype = {
     this._storage = this._storage.filter(function(element) {
       return element !== item;
     });
+    // linear O(n)
   }
-
 };
 
 /*
