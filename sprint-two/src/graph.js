@@ -129,19 +129,18 @@ Graph.prototype.getNode = function(node) {
  */
 
 /* --- tests --- */
-var testGraph = new Graph;
-testGraph.addNode(33);
-testGraph.addNode(66);
-testGraph.addNode(99);
-testGraph.addEdge(66, 99);
-testGraph.addEdge(66, 33);
-console.log(testGraph.nodes[0].edges);
-console.log(testGraph.nodes[1].edges);
-console.log(testGraph);
-console.log(testGraph.nodes);
-console.log(testGraph.nodes[0]);
-console.log(testGraph.contains(33));
-testGraph.removeNode(33);
+// var testGraph = new Graph;
+// testGraph.addNode(33);
+// testGraph.addNode(66);
+// testGraph.addNode(99);
+// testGraph.addEdge(66, 99);
+// testGraph.addEdge(66, 33);
 // console.log(testGraph.nodes[0].edges);
+// console.log(testGraph.nodes[1].edges);
+// console.log(testGraph);
+// console.log(testGraph.nodes);
+// console.log(testGraph.nodes[0]);
+// console.log(testGraph.contains(33));
+// testGraph.removeNode(33);
 
 
