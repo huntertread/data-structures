@@ -3,22 +3,25 @@ var Queue = function() {
   someInstance.storage = {};
   someInstance.position = 0;
   someInstance.sizeVal = 0;
-  someInstance.enqueue = enqueue;
-  someInstance.dequeue = dequeue;
-  someInstance.size = size;
+  // someInstance.enqueue = enqueue;
+  // someInstance.dequeue = dequeue;
+  // someInstance.size = size;
+  _.extend(someInstance, queueMethods);
   return someInstance;
 };
 
 /* shared functions */
 
-var enqueue = function(value) {
+var queueMethods = {};
+
+queueMethods.enqueue = function(value) {
   var position = this.position;
   this.storage[position] = value;
   this.position++;
   this.sizeVal++;
 };
 
-var dequeue = function() {
+queueMethods.dequeue = function() {
   var currentPosition = this.position;
   for (key in this.storage) {
     if (key < currentPosition) {
@@ -31,7 +34,7 @@ var dequeue = function() {
   return dequeue;
 };
 
-var size = function() {
+queueMethods.size = function() {
   if (this.sizeVal < 0) {
     this.sizeVal = 0;
     return this.sizeVal;

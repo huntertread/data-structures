@@ -1,5 +1,5 @@
 var Stack = function() {
-  this.newStack = {};
+  // this.newStack = {};
 };
 
 Stack.prototype.storage = {};

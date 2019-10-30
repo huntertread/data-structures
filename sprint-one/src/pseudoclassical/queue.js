@@ -1,5 +1,5 @@
 var Queue = function() {
-  this.newQueue = {};
+  // this.newQueue = {};
 };
 
 Queue.prototype.storage = {};

@@ -3,13 +3,16 @@ var Stack = function() {
   newStack.storage = {};
   newStack.sizeVal = 0;
   newStack.position = 0;
-  newStack.push = push;
-  newStack.pop = pop;
-  newStack.size = size;
+  // newStack.push = push;
+  // newStack.pop = pop;
+  // newStack.size = size;
+  _.extend(newStack, stackMethods);
   return newStack;
 };
 
-var push = function(value) {
+var stackMethods = {};
+
+stackMethods.push = function(value) {
   var position = this.position;
   var sizeVal = this.sizeVal;
   this.storage[position] = value;
@@ -17,7 +20,7 @@ var push = function(value) {
   this.sizeVal++;
 };
 
-var pop = function() {
+stackMethods.pop = function() {
   var position = this.position;
   var sizeVal = this.sizeVal;
   var poppedVal = this.storage[position - 1];
@@ -27,7 +30,7 @@ var pop = function() {
   return poppedVal;
 };
 
-var size = function() {
+stackMethods.size = function() {
   var sizeVal = this.sizeVal;
   if (sizeVal < 0) {
     sizeVal = 0;
